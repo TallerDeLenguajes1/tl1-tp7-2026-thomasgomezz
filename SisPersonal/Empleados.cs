@@ -65,20 +65,47 @@ namespace EspacioEmpleado;
         }
 
         //Para ejercicio 2
-        public int Aniguedad()
-    {
-        return DateTime.Now.Year - fechaIngreso.Year;
-    }
+        public int Antiguedad()
+        {
+            return DateTime.Now.Year - fechaIngreso.Year;
+        }
 
-    public int Edad()
-    {
-        return DateTime.Now.Year - fechaNacimiento.Year;
-    }
+        public int Edad()
+        {
+            return DateTime.Now.Year - fechaNacimiento.Year;
+        }
 
-    public int AniosParaJubilarse()
-    {
-        return 65 - Edad();
-    }
+        public int AniosParaJubilarse()
+        {
+            return 65 - Edad();
+        }
 
+        //punto 2 b
+        public double Salario()
+        {
+            double adicional;
+
+            //calculo por antiguedad
+            if(Antiguedad() < 20)
+            {
+                adicional = sueldo * (Antiguedad() * 0.01);
+            }else
+            {
+                adicional = sueldo * 0.25;
+            }
+
+            //Incremento por cargo 
+            if(cargo == Cargos.Ingeniero || cargo == Cargos.Especialista)
+            {
+                adicional = adicional +  ( adicional * 0.50);
+            }
+
+            //Incremento si es casado
+            if(estadoCivil == 'C')
+            {
+                adicional = adicional + 150000;
+            }
+            return sueldo + adicional;
+        }
     }
 
