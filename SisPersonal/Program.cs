@@ -16,3 +16,7 @@
     Console.WriteLine("Cargo: " + empleado1.Cargo);
     Console.WriteLine("Sueldo: " + empleado1.Sueldo);
    
+    Console.WriteLine("Edad: " + empleado1.Edad());
+    Console.WriteLine("Antiguedad: " + empleado1.Antiguedad());
+    Console.WriteLine("Anios para jubilarse: " + empleado1.AniosParaJubilarse());
+   

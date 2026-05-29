@@ -64,5 +64,21 @@ namespace EspacioEmpleado;
             set {cargo = value;}
         }
 
+        //Para ejercicio 2
+        public int Aniguedad()
+    {
+        return DateTime.Now.Year - fechaIngreso.Year;
+    }
+
+    public int Edad()
+    {
+        return DateTime.Now.Year - fechaNacimiento.Year;
+    }
+
+    public int AniosParaJubilarse()
+    {
+        return 65 - Edad();
+    }
+
     }
 
